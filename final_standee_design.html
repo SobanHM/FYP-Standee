@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SceneNarrator — Exhibition Standee</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0f2444; --gold:#d4a860; --ink:#1a1a1a;
+  --mid:#444; --dim:#777; --rule:#d4d4d4;
+  --bg:#fff; --tint:#f5f7fa; --tint2:#fdf9f0;
+  --green:#1a5c35; --accent-blue:#4a7ba7; --accent-teal:#2a9d8f;
+  --accent-coral:#e76f51; --accent-purple:#9d4edd;
+}
+body{background:linear-gradient(135deg, #e8e8e8 0%, #f0f0f0 100%);display:flex;justify-content:center;padding:20px;font-family:'Barlow',sans-serif;}
+.standee{width:620px;background:var(--bg);color:var(--ink);box-shadow:0 10px 40px rgba(0,0,0,0.15);border-radius:2px;}
+.gold-rule{height:4px;background:linear-gradient(90deg, var(--gold) 0%, var(--accent-blue) 100%);}
+/* HEADER */
+.hdr{background:var(--navy);padding:20px 32px 16px;}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:10px;border-bottom:1px solid #1e3a60;margin-bottom:12px;}
+.uni-name{font-size:15px;font-weight:600;letter-spacing:2.5px;color:#e5f7ee;text-transform:uppercase;}
+.dept-name{font-size:10px;font-weight:300;color:#eaf9c4;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+.year-tag{border:1px solid var(--gold);color:var(--gold);font-size:8px;font-weight:600;letter-spacing:1.5px;padding:2px 8px;text-transform:uppercase;}
+.hdr-title{font-family:'EB Garamond',serif;font-size:40px;font-weight:600;color:#fff;letter-spacing:-0.5px;line-height:1.0;}
+.hdr-subtitle{font-size:10px;font-weight:300;color:#7fa8cc;letter-spacing:2px;text-transform:uppercase;margin-top:5px;}
+.hdr-tagline{margin-top:8px;font-size:10.5px;font-weight:300;color:#8aacca;line-height:1.6;font-style:italic;border-left:2px solid var(--gold);padding-left:10px;}
+/* SECTIONS */
+.section{padding:12px 32px;border-bottom:1px solid var(--rule);background:linear-gradient(180deg, #fafbfc 0%, transparent 100%);}
+.section:last-child{border-bottom:none;}
+.sec-label{font-size:7.5px;font-weight:700;letter-spacing:2.5px;color:var(--navy);text-transform:uppercase;border-bottom:1.5px solid var(--navy);padding-bottom:4px;margin-bottom:8px;}
+.abs-text{font-size:10px;color:var(--mid);line-height:1.65;}
+.diagram-wrap{border:1.5px solid #d0d8e8;background:linear-gradient(135deg, #f8f9fb 0%, #f4f6fa 100%);padding:8px 8px 6px;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+.diagram-caption{font-size:7.5px;color:var(--dim);text-align:center;margin-top:5px;font-style:italic;font-weight:500;}
+/* TWO COLUMN BOXES - ENHANCED */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fw-box{border:1.5px solid var(--rule);padding:10px 12px;background:linear-gradient(135deg, #fafbfc 0%, #f5f7fa 100%);border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+.fw-box:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08);border-color:#c0c8d8;}
+.fw-head{font-size:7.5px;font-weight:700;letter-spacing:1.5px;color:var(--navy);text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:5px;margin-bottom:7px;}
+.fw-item{display:flex;gap:5px;margin-bottom:4px;align-items:flex-start;}
+.fw-item:last-child{margin-bottom:0;}
+.fw-bullet{width:4px;height:4px;background:var(--gold);flex-shrink:0;margin-top:4px;}
+.fw-text{font-size:8.5px;color:var(--mid);line-height:1.4;}
+.lim-bullet{width:4px;height:4px;border:1px solid var(--navy);flex-shrink:0;margin-top:4px;}
+/* TOOLS & TECH - ENHANCED VISUAL DESIGN */
+.tools-container{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px;}
+.tools-category{background:linear-gradient(135deg, rgba(74,123,167,0.08) 0%, rgba(42,157,143,0.06) 100%);border:1.5px solid rgba(74,123,167,0.3);border-radius:4px;padding:8px;overflow:hidden;}
+.tools-category.cat-vlm{border-left:4px solid #4a7ba7;background:linear-gradient(135deg, rgba(74,123,167,0.1) 0%, rgba(74,123,167,0.04) 100%);}
+.tools-category.cat-opt{border-left:4px solid var(--accent-coral);background:linear-gradient(135deg, rgba(231,111,81,0.1) 0%, rgba(231,111,81,0.04) 100%);}
+.tools-category.cat-eval{border-left:4px solid var(--accent-teal);background:linear-gradient(135deg, rgba(42,157,143,0.1) 0%, rgba(42,157,143,0.04) 100%);}
+.tools-category.cat-proc{border-left:4px solid var(--accent-purple);background:linear-gradient(135deg, rgba(157,78,221,0.1) 0%, rgba(157,78,221,0.04) 100%);}
+.cat-title{font-size:7px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:6px;padding-bottom:4px;border-bottom:1.5px solid rgba(74,123,167,0.2);display:flex;align-items:center;gap:4px;}
+.cat-title::before{content:'';display:inline-block;width:3px;height:3px;background:currentColor;border-radius:50%;}
+.cat-tools{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.tool-item{border:1.5px solid rgba(74,123,167,0.25);padding:6px 5px;text-align:center;background:#ffffff;border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:48px;transition:all 0.2s ease;position:relative;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.tool-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.12);border-color:rgba(74,123,167,0.5);}
+.tool-item i{font-size:16px;color:var(--navy);background:linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:900;}
+.tool-item.cat-vlm i{background:linear-gradient(135deg, #4a7ba7 0%, #2a9d8f 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tool-item.cat-opt i{background:linear-gradient(135deg, #e76f51 0%, #d4a860 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tool-item.cat-eval i{background:linear-gradient(135deg, #2a9d8f 0%, #1a5c35 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tool-item.cat-proc i{background:linear-gradient(135deg, #9d4edd 0%, #7209b7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tool-item .tool-lbl{font-size:7.5px;font-weight:600;color:var(--ink);letter-spacing:0.2px;line-height:1.1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+/* TABLE - ENHANCED */
+.tbl{width:100%;border-collapse:collapse;font-size:9px;border-radius:3px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.tbl thead tr{background:linear-gradient(90deg, var(--navy) 0%, #1a3a5c 100%);}
+.tbl thead th{padding:6px 4px;font-size:7px;font-weight:700;letter-spacing:1.2px;color:#fff;text-transform:uppercase;text-align:center;border-right:1px solid #1e3a60;}
+.tbl thead th:first-child{text-align:left;}
+.tbl tbody tr{border-bottom:1px solid #ececec;}
+.tbl tbody tr:nth-child(odd){background:#fafbfc;}
+.tbl tbody tr:nth-child(even){background:#fff;}
+.tbl tbody tr.ft{background:linear-gradient(90deg, #fdf9f0 0%, #fff5e6 100%);}
+.tbl tbody td{padding:5px 4px;color:var(--mid);text-align:center;border-right:1px solid #ececec;}
+.tbl tbody td:first-child{text-align:left;color:var(--ink);font-weight:600;}
+.tbl tbody td.hi{color:var(--green);font-weight:800;}
+.tbl-note{font-size:7.5px;color:var(--dim);margin-top:5px;padding:4px 0;border-top:1px dashed var(--rule);}
+.ft-tag{display:inline-block;background:linear-gradient(135deg, var(--green) 0%, #2a7a45 100%);color:#fff;font-size:6px;padding:2px 5px;letter-spacing:0.5px;text-transform:uppercase;vertical-align:middle;margin-left:3px;border-radius:2px;font-weight:700;}
+/* COMPACT CONTRIBUTIONS - ENHANCED */
+.contrib-row{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0f0f0;align-items:flex-start;transition:background 0.2s ease;}
+.contrib-row:hover{background:rgba(157,78,221,0.04);}
+.contrib-row:last-child{border-bottom:none;padding-bottom:0;}
+.cn{font-size:9.5px;font-weight:800;color:var(--gold);flex-shrink:0;width:20px;}
+.ct{font-size:9px;font-weight:700;color:var(--navy);display:inline;margin-right:5px;}
+.cd{font-size:8.5px;color:var(--mid);line-height:1.45;display:inline;}
+/* TEAM - ENHANCED */
+.team-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+.tc{border:1.5px solid #d4d4d4;padding:7px 9px;background:linear-gradient(135deg, #fafbfc 0%, #f5f7fa 100%);border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,0.04);transition:all 0.2s ease;}
+.tc:hover{border-color:var(--gold);box-shadow:0 4px 10px rgba(184,150,46,0.15);}
+.tn{font-size:9px;font-weight:700;color:var(--navy);}
+.tr2{font-size:7.5px;color:var(--dim);margin-top:2px;font-weight:500;}
+.sup-row{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%);border:1.5px solid var(--rule);border-left:4px solid var(--navy);padding:10px 14px;border-radius:2px;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.sup-lbl{font-size:6.5px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:3px;}
+.sup-name{font-size:10.5px;font-weight:700;color:var(--navy);}
+.sup-dept{font-size:8px;color:var(--dim);margin-top:2px;}
+/* FOOTER - ENHANCED */
+.footer{background:linear-gradient(90deg, var(--navy) 0%, #1a3a5c 100%);padding:10px 32px;display:flex;justify-content:space-between;align-items:center;border-top:3px solid var(--gold);}
+.fl{font-size:8.5px;color:#f2f8fc;font-weight:500;line-height:1.4;}
+.fr{font-size:8.5px;color:#edf4f8;text-align:right;line-height:1.4;font-weight:500;}
+.fdate{font-size:8.5px;font-weight:700;color:var(--gold);letter-spacing:0.5px;}
+</style>
+</head>
+<body>
+<div class="standee">
+<div class="gold-rule"></div>
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div>
+      <div class="uni-name">Sukkur IBA University</div>
+      <div class="dept-name">Department of Computer Science &nbsp;·&nbsp; B.S. Computer Science</div>
+    </div>
+    <div class="year-tag">FYP &nbsp;·&nbsp; April 2026</div>
+  </div>
+  <div class="hdr-title">SceneNarrator</div>
+  <div class="hdr-subtitle">Scene Narration + Navigation for the Visually Impaired</div>
+  <div class="hdr-tagline">
+    Benchmark evaluation of Vision–Language Models and LoRA fine-tuning for assistive AI in Pakistani indoor environments.
+  </div>
+</div>
+<div class="gold-rule"></div>
+
+<div class="section">
+  <div class="sec-label">Abstract</div>
+  <div class="abs-text">
+    State-of-the-art Vision-Language Models are mainly evaluated on Western-centric datasets, limiting their effectiveness in developing regions. This work introduces PakVLM-Bench, a localized benchmark of 400 real-world Pakistani images from supermarkets and homes. Three open VLMs were evaluated in zero-shot settings, with LoRA fine-tuning of LLaVA showing notable gains in narration, spatial grounding, and hallucination reduction.
+  </div>
+</div>
+
+<div class="section">
+  <div class="two-col">
+    <div class="fw-box">
+      <div class="fw-head">Problem Statement</div>
+      <div class="fw-text" style="margin-bottom: 6px;">
+        Evaluating egocentric vision maps $f:(I, Q) \rightarrow R$ for Visual Impairment Assistance (VIA) in unstructured Pakistani retail and home settings exposes trade-offs between linguistic fluency and spatial/navigational precision. Modern VLMs fail as specialized tactile assistants due to crucial constraints:
+      </div>
+      <div class="fw-item"><div class="lim-bullet"></div><div class="fw-text"><strong>Visual Grounding:</strong> Preventing factual hallucinations.</div></div>
+      <div class="fw-item"><div class="lim-bullet"></div><div class="fw-text"><strong>Semantic Accuracy:</strong> Lacking human tactical reasoning.</div></div>
+      <div class="fw-item"><div class="lim-bullet"></div><div class="fw-text"><strong>Functional Utility:</strong> Missing safe, navigable instructions.</div></div>
+    </div>
+
+    <div class="fw-box">
+      <div class="fw-head">Research Objectives</div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text"><strong>RO1:</strong> Test if general benchmarks translate to localized zero-shot and fine-tuned assistive navigation.</div></div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text"><strong>RO2:</strong> Measure how effectively lexical and semantic metrics capture actual assistive utility.</div></div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text"><strong>RO3:</strong> Evaluate reference-free and hallucination-aware metrics for better consistency indicators.</div></div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text"><strong>RO4:</strong> Deploy a curated regional benchmark dataset to expose regional model limitations.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Figure 1.1 — Evaluation Pipeline</div>
+  <div class="diagram-wrap">
+    <svg width="100%" viewBox="0 0 570 215" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Evaluation Pipeline — Figure 1.1</title>
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#0f2444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="arg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#b8962e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="arg2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#1a5c35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <rect x="4" y="4" width="122" height="156" rx="3" fill="#f5f7fa" stroke="#0f2444" stroke-width="0.8"/>
+      <rect x="4" y="4" width="122" height="15" rx="3" fill="#0f2444"/>
+      <text x="65" y="14" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8">A. DATA COLLECTION</text>
+      <rect x="12" y="24" width="106" height="26" rx="2" fill="#dde3ec" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="65" y="35" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" fill="#0f2444" font-weight="600">Supermarket (200)</text>
+      <rect x="12" y="54" width="106" height="26" rx="2" fill="#dde3ec" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="65" y="65" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" fill="#0f2444" font-weight="600">Home Images (200)</text>
+      <rect x="12" y="84" width="106" height="26" rx="2" fill="#ffffff" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="65" y="96" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" fill="#0f2444" font-weight="600">VIA / JSONL GT</text>
+      <text x="65" y="125" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7" fill="#888">400 Annotated Pics</text>
+      <text x="65" y="135" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7" fill="#888">Human-in-the-Loop</text>
+
+      <line x1="126" y1="90" x2="140" y2="90" stroke="#0f2444" stroke-width="0.8" marker-end="url(#ar)"/>
+
+      <rect x="142" y="4" width="138" height="156" rx="3" fill="#f5f7fa" stroke="#0f2444" stroke-width="0.8"/>
+      <rect x="142" y="4" width="138" height="15" rx="3" fill="#0f2444"/>
+      <text x="211" y="14" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8">B. LOCAL MODEL DEV.</text>
+      <rect x="150" y="24" width="122" height="16" rx="2" fill="#d4e8f0" stroke="#5a9ab8" stroke-width="0.7"/>
+      <text x="211" y="35" text-anchor="middle" font-family="Barlow,sans-serif" font-size="8" font-weight="700" fill="#0f2444">LLaVA v1.5</text>
+      <rect x="150" y="44" width="122" height="16" rx="2" fill="#dde3ec" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="211" y="55" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" fill="#333">Blip-2 (Q-Former)</text>
+      <rect x="150" y="64" width="122" height="16" rx="2" fill="#dde3ec" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="211" y="75" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" fill="#333">CogVLM v1.0</text>
+      <line x1="146" y1="85" x2="276" y2="85" stroke="#c0c8d8" stroke-width="0.5" stroke-dasharray="3,2"/>
+      <rect x="150" y="90" width="122" height="16" rx="2" fill="#fdf9f0" stroke="#b8962e" stroke-width="0.7"/>
+      <text x="211" y="101" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="600" fill="#7a5010">VIA Query</text>
+      <line x1="211" y1="106" x2="211" y2="112" stroke="#0f2444" stroke-width="0.6" marker-end="url(#ar)"/>
+      <rect x="150" y="114" width="122" height="20" rx="2" fill="#ffffff" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="211" y="126" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="600" fill="#0f2444">Model Response (JSONL)</text>
+
+      <line x1="280" y1="90" x2="294" y2="90" stroke="#0f2444" stroke-width="0.8" marker-end="url(#ar)"/>
+
+      <rect x="296" y="4" width="184" height="156" rx="3" fill="#f5f7fa" stroke="#0f2444" stroke-width="0.8"/>
+      <rect x="296" y="4" width="184" height="15" rx="3" fill="#0f2444"/>
+      <text x="388" y="14" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8">C. MULTI-LEVEL EVALUATION</text>
+      <rect x="304" y="24" width="168" height="22" rx="2" fill="#ffffff" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="388" y="33" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="600" fill="#0f2444">Lexical: BLEU, ROUGE-L, CIDEr</text>
+      <rect x="304" y="50" width="168" height="22" rx="2" fill="#ffffff" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="388" y="59" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="600" fill="#0f2444">Semantic: BERTScore, SBERT</text>
+      <rect x="304" y="76" width="168" height="22" rx="2" fill="#fff8f0" stroke="#c8962e" stroke-width="0.7"/>
+      <text x="388" y="85" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#7a3a00">Hallucination: POPE, CHAIR</text>
+      <rect x="304" y="102" width="168" height="22" rx="2" fill="#ffffff" stroke="#c0c8d8" stroke-width="0.5"/>
+      <text x="388" y="111" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="600" fill="#0f2444">Alignment: CLIPScore, SPECS</text>
+      <rect x="304" y="128" width="168" height="18" rx="2" fill="#0f2444"/>
+      <text x="388" y="140" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#ffffff">Aggregated Comparative Analysis</text>
+
+      <line x1="211" y1="160" x2="211" y2="173" stroke="#b8962e" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#arg)"/>
+      <line x1="388" y1="160" x2="388" y2="173" stroke="#b8962e" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#arg)"/>
+
+      <rect x="4" y="175" width="270" height="24" rx="3" fill="#fdf9f0" stroke="#b8962e" stroke-width="0.8"/>
+      <text x="139" y="186" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#7a5010">LoRA Fine-Tuning (LLaVA v1.5-7B)</text>
+      <text x="139" y="194" text-anchor="middle" font-family="Barlow,sans-serif" font-size="6.5" fill="#9a6010">650 pairs · 3 epochs · lr = 2e−4</text>
+
+      <line x1="274" y1="187" x2="294" y2="187" stroke="#b8962e" stroke-width="0.8" marker-end="url(#arg)"/>
+
+      <rect x="296" y="175" width="184" height="24" rx="3" fill="#eef5ef" stroke="#1a5c35" stroke-width="0.8"/>
+      <text x="388" y="186" text-anchor="middle" font-family="Barlow,sans-serif" font-size="7.5" font-weight="700" fill="#1a5c35">Re-Evaluation Pipeline</text>
+      <text x="388" y="194" text-anchor="middle" font-family="Barlow,sans-serif" font-size="6.5" fill="#2a7a45">Consistently improved metric tags</text>
+
+      <line x1="388" y1="175" x2="388" y2="162" stroke="#1a5c35" stroke-width="0.7" stroke-dasharray="2,2" marker-end="url(#arg2)"/>
+    </svg>
+    <div class="diagram-caption">Figure 1.1 — End-to-end compact evaluation pipeline: collection → zero-shot baseline → evaluation → LoRA SFT → re-evaluation.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Tools &amp; Technologies</div>
+  <div class="tools-container">
+    <div class="tools-category cat-vlm">
+      <div class="cat-title" style="color:#4a7ba7;">Vision-Language Models</div>
+      <div class="cat-tools">
+        <div class="tool-item cat-vlm"><i class="fa-solid fa-brain"></i><div class="tool-lbl">LLaVA v1.5</div></div>
+        <div class="tool-item cat-vlm"><i class="fa-solid fa-microchip"></i><div class="tool-lbl">CogVLM</div></div>
+        <div class="tool-item cat-vlm"><i class="fa-solid fa-network-wired"></i><div class="tool-lbl">BLIP 2</div></div>
+        <div class="tool-item cat-vlm"><i class="fa-solid fa-cubes"></i><div class="tool-lbl">HuggingFace</div></div>
+      </div>
+    </div>
+    
+    <div class="tools-category cat-opt">
+      <div class="cat-title" style="color:#e76f51;">Fine-tuning &amp; Optimization</div>
+      <div class="cat-tools">
+        <div class="tool-item cat-opt"><i class="fa-solid fa-layer-group"></i><div class="tool-lbl">LoRA + PEFT</div></div>
+        <div class="tool-item cat-opt"><i class="fa-brands fa-python"></i><div class="tool-lbl">PyTorch</div></div>
+        <div class="tool-item cat-opt"><i class="fa-solid fa-bolt"></i><div class="tool-lbl">Accelerate</div></div>
+        <div class="tool-item cat-opt"><i class="fa-solid fa-gears"></i><div class="tool-lbl">Transformers</div></div>
+      </div>
+    </div>
+    
+    <div class="tools-category cat-eval">
+      <div class="cat-title" style="color:#2a9d8f;">Evaluation Metrics</div>
+      <div class="cat-tools">
+        <div class="tool-item cat-eval"><i class="fa-solid fa-eye"></i><div class="tool-lbl">CLIPScore</div></div>
+        <div class="tool-item cat-eval"><i class="fa-solid fa-chart-simple"></i><div class="tool-lbl">BERTScore</div></div>
+        <div class="tool-item cat-eval"><i class="fa-solid fa-chart-line"></i><div class="tool-lbl">SBERT Embeddings</div></div>
+        <div class="tool-item cat-eval"><i class="fa-solid fa-head-side-virus"></i><div class="tool-lbl">Hallucination Eval</div></div>
+      </div>
+    </div>
+    
+    <div class="tools-category cat-proc">
+      <div class="cat-title" style="color:#9d4edd;">Data &amp; Processing</div>
+      <div class="cat-tools">
+        <div class="tool-item cat-proc"><i class="fa-solid fa-camera"></i><div class="tool-lbl">OpenCV</div></div>
+        <div class="tool-item cat-proc"><i class="fa-solid fa-image"></i><div class="tool-lbl">PIL / Pillow</div></div>
+        <div class="tool-item cat-proc"><i class="fa-solid fa-language"></i><div class="tool-lbl">spaCy NLP</div></div>
+        <div class="tool-item cat-proc"><i class="fa-solid fa-file-code"></i><div class="tool-lbl">JSONL / VIA</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Zero-Shot Model Comparison — Table 4.1</div>
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>ROUGE-L</th>
+        <th>BERTScore</th>
+        <th>SBERT</th>
+        <th>CLIPSCORE</th>
+        <th>SPECS Score</th>
+        <th>Hallucination</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ft">
+        <td>LLaVA v1.5 <span class="ft-tag">fine-tuned</span></td>
+        <td class="hi">0.2755</td>
+        <td class="hi">0.8872</td>
+        <td class="hi">0.7116</td>
+        <td class="hi">0.2839</td>
+        <td class="hi">3.2770</td>
+        <td class="hi">0.1913</td>
+      </tr>
+      <tr>
+        <td>LLaVA v1.5 (zero-shot)</td>
+        <td>0.2144</td>
+        <td>0.8632</td>
+        <td>0.6079</td>
+        <td>0.3139</td>
+        <td>1.320</td>
+        <td>0.2505</td>
+      </tr>
+      <tr>
+        <td>CogVLM v1.0</td>
+        <td>0.2054</td>
+        <td>0.8647</td>
+        <td>0.6449</td>
+        <td>0.3378</td>
+        <td>2.06</td>
+        <td>0.2722</td>
+      </tr>
+      <tr>
+        <td>BLIP-2 (Q-Former)</td>
+        <td>0.1058</td>
+        <td>0.8482</td>
+        <td>0.4734</td>
+        <td>0.3032</td>
+        <td>0.473</td>
+        <td>0.1307</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="tbl-note">Green = best overall (fine-tuned LLaVA) </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Contributions</div>
+  <div class="contrib-row">
+    <div class="cn">01.</div>
+    <div><div class="ct">Localized Pakistani benchmark dataset:</div><div class="cd">400 images from supermarkets and homes with narrative-style ground truth, developed using human-in-the-loop annotation.</div></div>
+  </div>
+  <div class="contrib-row">
+    <div class="cn">02.</div>
+    <div><div class="ct">Proposed unified multi-level evaluation framework:</div><div class="cd">First-of-its-kind pipeline combining lexical, semantic, visual-grounding, and hallucination metrics applied to an assistive AI task.</div></div>
+  </div>
+  <div class="contrib-row">
+    <div class="cn">03.</div>
+    <div><div class="ct">LoRA fine-tuning for domain adaptation:</div><div class="cd">Fine-tuning of LLaVA-1.5-7B on 650 instruction pairs yielding consistent gains across all evaluation dimensions with reduced hallucination rate.</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Dataset Samples</div>
+  <div class="two-col">
+    <div class="diagram-wrap">
+      <img src="https://github.com/SobanHM/FYP-Standee/blob/main/0001_ds.JPG?raw=true" style="width:100%;height:auto;border-radius:2px;">
+      <div class="diagram-caption">Supermarket Dataset (200 images)</div>
+    </div>
+    <div class="diagram-wrap">
+      <img src="https://github.com/SobanHM/FYP-Standee/blob/main/0002_ds.JPG?raw=true" style="width:100%;height:auto;border-radius:2px;">
+      <div class="diagram-caption">Home Environment Dataset (200 images)</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Limitations &amp; Future Work</div>
+  <div class="two-col">
+    <div class="fw-box">
+      <div class="fw-head">Limitations</div>
+      <div class="fw-item"><div class="lim-bullet"></div><div class="fw-text">Dataset scale limits generalisability across edge-cases.</div></div>
+      <div class="fw-item"><div class="lim-bullet"></div><div class="fw-text">Evaluation conducted in offline settings; real-time latency, and user interaction not tested.</div></div>
+    </div>
+    <div class="fw-box">
+      <div class="fw-head">Future Work</div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text">Expand dataset to rural markets, and transport hubs.</div></div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text">Integrate monocular depth estimation for obstacle distance.</div></div>
+      <div class="fw-item"><div class="fw-bullet"></div><div class="fw-text">Deploy fine-tuned model on edge devices for real-time assistive use.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Research Team</div>
+  <div class="team-grid">
+    <div class="tc"><div class="tn">Soban Hussain</div><div class="tr2">023-22-0116</div></div>
+    <div class="tc"><div class="tn">Praih Alias Faiza</div><div class="tr2">023-22-0055</div></div>
+    <div class="tc"><div class="tn">Tasmia</div><div class="tr2">023-22-0051</div></div>
+  </div>
+  <div class="sup-row">
+    <div>
+      <div class="sup-lbl">Supervisor</div>
+      <div class="sup-name">Dr. Mohammad Asif Khan</div>
+      <div class="sup-dept">Department of Computer Science, Sukkur IBA University</div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-rule"></div>
+<div class="footer">
+  <div class="fl">repository.suk-iba.edu.pk<br>© 2026 Soban · Praih · Tasmia</div>
+  <div class="fdate">Defended 21 April 2026</div>
+  <div class="fr">B.Sc. Computer Science<br>Specialisation: Computer Science</div>
+</div>
+
+</div>
+</body>
+</html>
